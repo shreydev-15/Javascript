@@ -27,15 +27,35 @@ let url = "https://catfact.ninja/fact"
 
 
 // Using async await
-async function getdata(){
-    try{
-    let res = await fetch(url)
-    let data = await res.json()
-    console.log("Data 1 is ", data.fact)
 
-    let res2 = await fetch(url)
-    let data2 = await res2.json()
-    console.log("Data 2 is ", data2.fact)
+
+// async function getdata(){
+//     try{
+//     let res = await fetch(url)
+//     let data = await res.json()
+//     console.log("Data 1 is ", data.fact)
+
+//     let res2 = await fetch(url)
+//     let data2 = await res2.json()
+//     console.log("Data 2 is ", data2.fact)
+//     }
+//     catch(err){
+//         console.log("Error is ", err)
+//     }
+
+//     console.log("End of the function")
+// }
+
+
+// Using axios 
+
+async function getfacts(){
+    try{
+    let res = await axios.get(url)
+    console.log("Fact is ", res.data.fact)
+
+    let res2 = await axios.get(url)
+    console.log("Fact is ", res2.data.fact)
     }
     catch(err){
         console.log("Error is ", err)
@@ -43,3 +63,11 @@ async function getdata(){
 
     console.log("End of the function")
 }
+
+
+
+
+
+
+
+
